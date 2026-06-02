@@ -18,7 +18,7 @@ const Articles = () => {
     return (
         <div className="p-2 mx-auto w-full max-w-200 h-full">
             <h1 className="my-5 text-2xl md:text-5xl">{CategoryNames[category]}の記事</h1>
-            <div className="flex justify-start items-center flex-wrap gap-5">
+            <div className="flex justify-center items-center flex-wrap gap-5">
                 <Card metadata={izumoooyashiroFrontmatter as ArticleFrontmatter}><Izumoooyashiro /></Card>
                 <Card metadata={inasanohamaFrontmatter as ArticleFrontmatter}><Inasanohama /></Card>
                 <Card metadata={iwamiginzanFrontmatter as ArticleFrontmatter}><Iwamiginzan /></Card>
