@@ -1,0 +1,28 @@
+@reference "../../../app/globals.css";
+
+@keyframes ticker {
+    0%, 15%, 100% { transform: translateY(200%); }
+    20%, 35%      { transform: translateY(100%); }
+    40%, 55%      { transform: translateY(0%); }
+    60%, 75%      { transform: translateY(-100%); }
+    80%, 95%      { transform: translateY(-200%); }
+    98%           { transform: translateY(210%); }
+}
+
+.ticker > li {
+  animation: ticker ease 15s infinite; /* 3つの要素 * 3秒 */
+}
+
+.heroImage {
+    /* clip-path を使って、画面全体に広がるbefore要素をこの要素の枠内に切り取る */
+    @apply relative w-full h-100 bg-label;
+    clip-path: inset(0);
+}
+
+.heroImage::before {
+    /* position: fixed に変更し、画面全体を覆うように配置 */
+    @apply fixed top-0 left-0 w-full h-full bg-[url(/images/izumoooyashiro/1.webp)] bg-cover bg-center -z-1 brightness-40;
+    content: "";
+    /* どの要素を基準にfixedさせるかを明示するため、pointer-eventsを変えないように注意 */
+    /* pointer-events: none; */
+}

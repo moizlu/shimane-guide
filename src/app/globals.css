@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    /* scroll-padding: 15rem; */
+}
+
+@theme {
+    --breakpoint-xs: 500px;
+    --breakpoint-2xs: 365px;
+
+    --font-primary: "Noto Sans JP", "monospace";
+
+    --spacing-safe-top: env(safe-area-inset-top);
+    --spacing-safe-bottom: env(safe-area-inset-bottom);
+    --spacing-safe-left: env(safe-area-inset-left);
+    --spacing-safe-light: env(safe-area-inset-right);
+
+    --spacing-safe-x: env(safe-area-inset-left);
+    --spacing-safe-y: env(safe-area-inset-bottom);
+
+    /* ベースカラー */
+    --color-base-light: var(--color-neutral-100);
+    --color-base-dark: var(--color-neutral-800);
+    --color-base: var(--color-base-light);
+
+    /* メインカラー */
+    --color-main-light: #E2421F;
+    --color-main-dark: #E2421F;
+    --color-main: var(--color-main-light);
+
+    /* ラベルカラー */
+    --color-label-light: var(--color-neutral-800);
+    --color-label-dark: var(--color-neutral-100);
+    --color-label: var(--color-label-light);
+
+    --color-information: var(--color-sky-400);
+    --color-success: var(--color-green-700);
+    --color-danger: var(--color-red-600);
+    --color-warning: var(--color-yellow-500);
+    --color-disabled: var(--color-neutral-300);
+}
+
+@layer theme {
+    .dark {
+        --color-base: var(--color-base-dark);
+        --color-main: var(--color-main-dark);
+        --color-label: var(--color-label-dark);
+        --color-success: var(--color-green-500);
+        --color-danger: var(--color-red-500);
+        --color-warning: var(--color-yellow-300);
+        --color-disabled: var(--color-neutral-500);
+    }
+}
+
+@layer base {
+    h1 {
+        @apply text-xl md:text-2xl font-bold font-serif;
+    }
+
+    h2 {
+        @apply text-lg md:text-xl font-bold font-serif;
+    }
+
+    h3 {
+        @apply text-sm md:text-lg font-bold font-serif;
+    }
+}
+
+@layer components {
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+}
