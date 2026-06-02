@@ -24,7 +24,8 @@ const modal = (emblaRef: EmblaViewportRefType, emblaApi: EmblaCarouselType | und
                 <div ref={emblaRef} className="w-[95%] h-[400px] shrink-0 max-w-150 overflow-x-hidden flex flex-col justify-center items-center overflow-clip">
                     <div className="flex">
                         {metadata.images.map((image, idx) => (
-                            <Image key={`${image}-${idx}`} src={image} alt={`image-${idx}`} width={500} height={500} />
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img key={`${image}-${idx}`} src={image} alt={`image-${idx}`} width={500} height={500} />
                         ))}
                     </div>
                 </div>
@@ -64,7 +65,8 @@ const Card = ({ children, metadata }: Props) => {
         <button onClick={onClick} title={metadata.name} className={clsx("relative w-50 h-50 cursor-pointer overflow-clip shadow-black shadow-lg/50 flex flex-col justify-start items-center rounded-xl gap-4",
             (category !== "all" && !(metadata.categories?.includes(category))) && "hidden"
         )}>
-            <Image src={metadata.images[0] ?? ""} alt={metadata.name} width={500} height={500} className="shadow-black shadow-md/25" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={metadata.images[0] ?? ""} alt={metadata.name} width={500} height={500} className="shadow-black shadow-md/25" />
             <p className="absolute bottom-0 left-0 w-full h-20 text-2xl bg-base flex justify-center items-center font-serif">{metadata.name}</p>
         </button>
     )
