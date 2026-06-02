@@ -11,7 +11,7 @@ import Hero from "@/components/sections/Hero/Hero";
 
 export const metadata: Metadata = {
     title: "島根県ガイド",
-    description: "",
+    description: ""
 };
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
