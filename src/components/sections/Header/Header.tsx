@@ -19,7 +19,7 @@ const Header = () => {
             <header className="z-1000 fixed top-0 left-0 w-full h-15 px-2 bg-base/50 backdrop-blur-sm flex justify-between items-center">
                 <Link href="/" className="flex justify-center items-center">
                     <Image src="/logo.svg" alt="logo" width={500} height={500} className="w-15 h-15" />
-                    <p className="block md:hidden lg:block text-3xl font-bol font-serif">島根県ガイド</p>
+                    <p className="hidden sm:block md:hidden lg:block text-3xl font-bol font-serif">島根県ガイド</p>
                 </Link>
             </header>
 
