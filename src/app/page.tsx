@@ -22,7 +22,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="w-full h-full min-h-dvh">
+        <div className="w-full h-full pb-20 min-h-dvh">
             <Articles />
         </div>);
 }
